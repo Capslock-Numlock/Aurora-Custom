@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Clown</name>
+		<description>The Clown is a new Fighter Archetype available at 3rd level. Masters of distraction and humor, these warriors use slapstick antics and comedic timing to confound their enemies and inspire their allies. Whether throwing pies or pulling tricks from their sleeves, Clowns turn the battlefield into a chaotic circus.</description>
+		<author>Capslock</author>
+		<update version="1.0.0">
+			<file name="fighter-clown.xml" url="https://github.com/Capslock-Numlock/Aurora-Custom/" />
+		</update>
+	</info>
+
+	<element name="Clown" type="Archetype" source="Homebrew" id="ID_HOMEBREW_ARCHETYPE_FIGHTER_CLOWN">
+		<supports>Martial Archetype</supports>
+		<description>
+			<p>As a Clown, your weapon of choice might be a rubber chicken or a honking horn, but your real strength lies in your ability to confuse, distract, and bring levity to even the darkest battles.</p>
+			<div element="ID_HOMEBREW_FEATURE_CLOWN_SCHTICK" />
+			<div element="ID_HOMEBREW_FEATURE_PIE_BOMB" />
+			<div element="ID_HOMEBREW_FEATURE_BOUNCY_SHOES" />
+			<div element="ID_HOMEBREW_FEATURE_CONFETTI_BLAST" />
+			<div element="ID_HOMEBREW_FEATURE_HONK_HONK" />
+		</description>
+		<rules>
+			<grant type="Archetype Feature" id="ID_HOMEBREW_FEATURE_CLOWN_SCHTICK" level="3" />
+			<grant type="Archetype Feature" id="ID_HOMEBREW_FEATURE_PIE_BOMB" level="3" />
+			<grant type="Archetype Feature" id="ID_HOMEBREW_FEATURE_BOUNCY_SHOES" level="7" />
+			<grant type="Archetype Feature" id="ID_HOMEBREW_FEATURE_CONFETTI_BLAST" level="10" />
+			<grant type="Archetype Feature" id="ID_HOMEBREW_FEATURE_HONK_HONK" level="15" />
+		</rules>
+	</element>
+
+	<!-- Features -->
+	<element name="Clown Schtick" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_FEATURE_CLOWN_SCHTICK">
+		<description>
+			<p>At 3rd level, you gain proficiency in Performance, if you don’t already have it. You can use your Performance skill in place of Intimidation or Persuasion checks, as your clownish antics distract and disarm foes.</p>
+		</description>
+		<rules>
+			<grant type="Proficiency" id="ID_INTERNAL_SKILL_PERFORMANCE" />
+		</rules>
+	</element>
+
+	<element name="Pie Bomb" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_FEATURE_PIE_BOMB">
+		<description>
+			<p>Also at 3rd level, you can throw a magically-enhanced pie as an attack. This pie splatters in a 5-foot radius, forcing creatures to make a Dexterity saving throw (DC = 8 + your proficiency bonus + your Dexterity modifier) or be blinded until the end of their next turn.</p>
+		</description>
+		<rules>
+			<stat name="pie-bomb:dc" value="8" />
+			<stat name="pie-bomb:dc" value="proficiency" />
+			<stat name="pie-bomb:dc" value="dexterity:modifier" />
+		</rules>
+	</element>
+
+	<element name="Bouncy Shoes" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_FEATURE_BOUNCY_SHOES">
+		<description>
+			<p>At 7th level, your bouncy shoes allow you to leap great distances. Your jump distance is tripled, and you take no damage from falls of 30 feet or less.</p>
+		</description>
+	</element>
+
+	<element name="Confetti Blast" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_FEATURE_CONFETTI_BLAST">
+		<description>
+			<p>Starting at 10th level, you can release a blast of magical confetti as an action. All creatures within a 20-foot radius must succeed on a Wisdom saving throw (DC = 8 + your proficiency bonus + your Charisma modifier) or be charmed for 1 minute. Creatures charmed this way regard you as harmlessly entertaining.</p>
+		</description>
+		<rules>
+			<stat name="confetti-blast:dc" value="8" />
+			<stat name="confetti-blast:dc" value="proficiency" />
+			<stat name="confetti-blast:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+
+	<element name="Honk Honk" type="Archetype Feature" source="Homebrew" id="ID_HOMEBREW_FEATURE_HONK_HONK">
+		<description>
+			<p>At 15th level, your honking horn can disrupt concentration. As a reaction when a creature within 30 feet casts a spell, you can honk your horn to force them to make a Constitution saving throw (DC = 8 + your proficiency bonus + your Charisma modifier). On a failed save, the spell fails and the creature loses their action.</p>
+		</description>
+		<rules>
+			<stat name="honk-honk:dc" value="8" />
+			<stat name="honk-honk:dc" value="proficiency" />
+			<stat name="honk-honk:dc" value="charisma:modifier" />
+		</rules>
+	</element>
+</elements>
